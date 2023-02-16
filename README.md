@@ -9,6 +9,7 @@
 ３．入門　数値計算　オーム社
 
 ４．Understanding binary-Goppa decoding, DJB
+
 ----
 
 なぜ暗号の面白さがわからんのだ愚民どもめ！
