@@ -4,6 +4,11 @@
 
 １． The Gurasuwam-Sudan　Decoding Algorithm for Reed-Solomon Codes, R.J.McEliece
 
+２．代数系と符号理論　植松友彦　オーム社
+
+３．入門　数値計算　オーム社
+
+４．Understanding binary-Goppa decoding, DJB
 ----
 
 なぜ暗号の面白さがわからんのだ愚民どもめ！
