@@ -1,5 +1,11 @@
 # The_List
 
+参考文献
+
+１． The Gurasuwam-Sudan　Decoding Algorithm for Reed-Solomon Codes, R.J.McEliece
+
+----
+
 なぜ暗号の面白さがわからんのだ愚民どもめ！
 
 と思ったので暗号とは無関係な符号のリスト復号なんかを始めてみたり。
