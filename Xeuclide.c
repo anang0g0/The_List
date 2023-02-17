@@ -4209,43 +4209,50 @@ int main(void)
   OP f = {0}, r = {0}, w = {0};
   vec v = {0};
   unsigned short ss[K] = {0}, zz[N] = {0};
-  unsigned short ga[8]={1,1,10,7,11,12,4,14};
-  unsigned short gb[8]={0};
+  unsigned short ga[6]={1,1,11,13,10,7};
+  unsigned short gb[6]={0};
   vec x[8]={0},tmp={0};
   OP t[8]={0};
   unsigned short cc[8]={0},dd[8]={0};
-  OP tt={0};
+  OP tt={0},ecp={0};
+
+printf("%d %d %d %d %d\n",1,gf[oinv(7)],gf[mlt(fg[11],oinv(13))],gf[mlt(fg[13],oinv(11))],gf[mlt(fg[10],oinv(2))]);
+//exit(1);
 
   tmp.x[0]=1;
+  ecp=v2o(tmp);
   //t=v2o(tmp);
-  for(int i=0;i<8;i++){
+  for(int i=0;i<5;i++){
   x[i].x[1]=1;
   x[i].x[0]=i;
   }
 
-  for (int i = 0; i < 8; i++)
+  for (int i = 0; i < 5; i++)
   {
     tt = v2o(tmp);
     cc[i]=1;
     //
-    for (int j = 0; j < 8; j++)
+    for (int j = 0; j < 5; j++)
     {
       // #pragma omp critical
       if (i != j)
       {
         tt = omul(tt, v2o(x[j]));
-        cc[i]=gf[oinv(gf[mlt(fg[cc[i]],fg[i^j])])];
-        //printf("%d,",i^j);
+        cc[i]=gf[mlt(fg[cc[i]],fg[i^j])];
+        printf("e=%d i=%d j=%d\n",i^j,i,j);
       }
     //printf("\n");
     }
     if(cc[i]>0){
-  cc[i]=gf[mlt(fg[ga[i]],fg[cc[i]])];
-  t[i]=kof(cc[i],tt);
+  dd[i]=gf[mlt(fg[ga[i]],oinv(cc[i]))];
+  t[i]=kof(dd[i],tt);
     }
-  printpol(o2v(t[i]));
-  printf("\n");
+    ecp=oadd(ecp,t[i]);
+  //printpol(o2v(t[i]));
+  //printf("\n");
   }
+  printsage(o2v(ecp));
+  printf("\n");
   exit(1);
 
 
