@@ -61,7 +61,7 @@ oinv(unsigned short a)
   int i;
 
   if (a == 0)
-    return -1;
+    return 0;
 
   for (i = 0; i < N; i++)
   {
@@ -4226,7 +4226,7 @@ int main(void)
   for (int i = 0; i < 8; i++)
   {
     tt = v2o(tmp);
-    cc[i]=0;
+    cc[i]=1;
     //
     for (int j = 0; j < 8; j++)
     {
@@ -4234,10 +4234,15 @@ int main(void)
       if (i != j)
       {
         tt = omul(tt, v2o(x[j]));
+        cc[i]=gf[oinv(gf[mlt(fg[cc[i]],fg[i^j])])];
+        //printf("%d,",i^j);
       }
-    cc[i]=i^j;
+    //printf("\n");
     }
-  t[i]=tt;
+    if(cc[i]>0){
+  cc[i]=gf[mlt(fg[ga[i]],fg[cc[i]])];
+  t[i]=kof(cc[i],tt);
+    }
   printpol(o2v(t[i]));
   printf("\n");
   }
