@@ -22,7 +22,7 @@
 #include <unistd.h>
 #include <sys/types.h>
 // #include "1024.h"
-// #include "8192.h"
+ #include "8192.h"
 // #include "2048.h"
 //#include "4096.h"
 // #include "512.h"
@@ -37,7 +37,7 @@ extern int mltu();
 extern int mlt();
 extern int mltn();
 extern void print_trace();
-extern unsigned short gf[N],fg[N];
+//extern unsigned short gf[N],fg[N];
 
 #define DAT 5
 int num = 0;

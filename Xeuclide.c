@@ -23,7 +23,7 @@
 #include <assert.h>
 #include <execinfo.h>
 
-// #include "8192.h"
+ #include "8192.h"
 // #include "4096.h"
 #include "global.h"
 #include "struct.h"
@@ -4219,6 +4219,7 @@ int main(void)
 printf("%d %d %d %d %d\n",1,gf[oinv(7)],gf[mlt(fg[11],oinv(13))],gf[mlt(fg[13],oinv(11))],gf[mlt(fg[10],oinv(2))]);
 //exit(1);
 
+//lagrange 補間の実験
   tmp.x[0]=1;
   ecp=v2o(tmp);
   //t=v2o(tmp);
